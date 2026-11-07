@@ -94,6 +94,14 @@ body.touch .wslot{min-width:62px;padding:3px 8px;font-size:11px}
 body.touch #wpbar{bottom:max(8px,env(safe-area-inset-bottom))}
 body.touch #loadout{width:min(520px,96vw);padding:10px 12px}
 #touch.hide{display:none!important}
+.gbox{text-align:left;width:min(640px,94vw)}
+.gbox h2{text-align:center}.gbox h3{margin:14px 0 4px;color:#ffd36b;font-size:16px;letter-spacing:1px}
+.gbox ul{margin:0;padding:0;list-style:none}.gbox li{margin:5px 0;font-size:14px;line-height:1.4;color:#efe6ff}
+.gbox li b{display:inline-block;min-width:78px;background:#3a1f66;border:1px solid #8a63d6;border-radius:6px;padding:0 7px;margin-right:6px;color:#ffd36b;font-size:12px;text-align:center}
+.gbox .goal{background:rgba(255,200,100,.12);border:1px solid rgba(255,200,100,.4);border-radius:10px;padding:8px 10px;font-size:14px}
+#joy::after{content:'MOVE';position:absolute;left:0;right:0;top:-18px;text-align:center;font-size:11px;font-weight:800;letter-spacing:2px;color:rgba(255,255,255,.7);text-shadow:0 1px 2px #000}
+.rotmsg{display:none;margin:8px 0 0;font-size:14px;color:#ffd36b;font-weight:700}
+@media (orientation:portrait) and (pointer:coarse){.rotmsg{display:block}}
 #joy{position:absolute;left:max(18px,env(safe-area-inset-left));bottom:max(18px,env(safe-area-inset-bottom));width:132px;height:132px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.35);pointer-events:auto;touch-action:none}
 #knob{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,176,32,.7);border:2px solid #ffe3a0;pointer-events:none}
 #tpad{position:absolute;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));width:190px;height:170px;pointer-events:none}
@@ -175,7 +183,7 @@ body.touch #mcenter{font-size:44px}
 <div id="help" class="panel">
 <kbd>W A S D</kbd>/arrows drive &nbsp; <kbd>Space</kbd> handbrake (plane: climb) &nbsp; <kbd>Shift</kbd> nitro (plane: descend)<br>
 <kbd>1</kbd> Car <kbd>2</kbd> Truck <kbd>3</kbd> Scooter <kbd>4</kbd> Bike <kbd>5</kbd> Plane &nbsp; <kbd>F</kbd> rocket volley &nbsp; <kbd>G</kbd> pataka chain<br>
-<kbd>X</kbd> get out / get in &nbsp; <kbd>C</kbd> cheer (on foot) &nbsp; <kbd>E</kbd> talk to the shopkeeper (pink Diwali Shop, one is beside the start) &nbsp; <kbd>V</kbd> camera &nbsp; <kbd>M</kbd> mute &nbsp; <kbd>H</kbd> hide help<br>
+<kbd>?</kbd> controls guide &nbsp; <kbd>X</kbd> get out / get in &nbsp; <kbd>C</kbd> slide (on foot) &nbsp; <kbd>B</kbd> cheer &nbsp; <kbd>E</kbd> talk to the shopkeeper (pink Diwali Shop, one is beside the start) &nbsp; <kbd>V</kbd> camera &nbsp; <kbd>M</kbd> mute &nbsp; <kbd>H</kbd> hide help<br>
 Weapons (on foot, buy at the shop): <kbd>Z</kbd> switch &nbsp; <kbd>L</kbd> loadout &nbsp; <kbd>P</kbd> play a match (vs bots) &nbsp; <kbd>Click</kbd>/<kbd>J</kbd> fire &nbsp; hold <kbd>Right-click</kbd>/<kbd>Q</kbd> aim (Scythe: dash)
 </div>
 <div id="prompt" class="panel">Press E to open the Diwali Shop</div>
@@ -195,6 +203,33 @@ Weapons (on foot, buy at the shop): <kbd>Z</kbd> switch &nbsp; <kbd>L</kbd> load
  <div id="mswitch">Switch Loadout <kbd>E</kbd></div>
  <div id="mcenter"></div><div id="mhurt"></div><div id="mscope"></div>
 </div>
+<div id="guide" class="modal"><div class="mbox gbox"><h2>HOW TO PLAY</h2>
+ <div class="goal"><b>Goal:</b> drive around the Diwali city, collect the yellow coins, light fireworks, and spend coins at the pink Diwali Shop on patakas, vehicle upgrades and weapons. You can also play <b>Diwali Duels</b> (a shooting match against bots).</div>
+ <h3>MOVING (PHONE)</h3><ul>
+  <li><b>Joystick</b> bottom-left. Push <u>up</u> to go forward, <u>down</u> to reverse or brake, <u>left / right</u> to steer.</li>
+  <li><b>&#9650; JUMP</b> handbrake in a vehicle, climb in the plane.</li>
+  <li><b>&#9889;</b> nitro boost in a vehicle, run when walking.</li>
+  <li><b>OUT/IN</b> gets you out of the vehicle to walk, and back in when you stand next to it.</li></ul>
+ <h3>TOP-RIGHT BUTTONS</h3><ul>
+  <li><b>SHOP</b> appears when you are near a shop. Tap it to talk to the shopkeeper, then pick "Buy patakas".</li>
+  <li><b>&#128663; &#128667; &#128757; &#127949; &#9992;&#65039;</b> switch between car, truck, scooter, bike and plane.</li>
+  <li><b>ROCKETS</b> / <b>PATAKA</b> light fireworks and crackers around you.</li>
+  <li><b>CAMERA</b> changes the view. <b>MUTE</b> turns sound off. <b>FULL</b> goes fullscreen.</li>
+  <li><b>MATCH</b> opens Diwali Duels. <b>?</b> opens this guide again.</li></ul>
+ <h3>WEAPONS (WALKING)</h3><ul>
+  <li><b>Buy</b> weapons in the shop, then tap <b>OUT/IN</b> to get out of your vehicle.</li>
+  <li><b>FIRE</b> shoots. <b>AIM</b> (hold) zooms in. <b>SWITCH</b> changes weapon. <b>LOADOUT</b> chooses which weapons you carry.</li>
+  <li><b>SLIDE</b> a fast low glide. <b>CHEER</b> raises your arms.</li></ul>
+ <h3>DIWALI DUELS</h3><ul>
+  <li>Tap <b>MATCH</b>, then <b>PLAY</b>. You and 3 bots fight in a small town. First to 10 eliminations wins coins.</li>
+  <li>Joystick walks and strafes. <b>Drag your finger on the right side of the screen</b> to look around and aim. Tap <b>FIRE</b> to shoot.</li>
+  <li>You can also drive a vehicle in the match and run the bots over. Tap <b>MATCH</b> twice to leave.</li></ul>
+ <h3>KEYBOARD (COMPUTER)</h3><ul>
+  <li><b>W A S D</b> move or drive &nbsp; <b>Space</b> handbrake / climb &nbsp; <b>Shift</b> nitro / run</li>
+  <li><b>X</b> get out / in &nbsp; <b>E</b> shop &nbsp; <b>1-5</b> vehicle &nbsp; <b>F</b> rockets &nbsp; <b>G</b> pataka &nbsp; <b>V</b> camera</li>
+  <li><b>Click / J</b> fire &nbsp; <b>Right-click / Q</b> aim &nbsp; <b>Z</b> switch &nbsp; <b>L</b> loadout &nbsp; <b>C</b> slide &nbsp; <b>B</b> cheer &nbsp; <b>P</b> match</li>
+  <li><b>?</b> shows this guide</li></ul>
+ <button id="gdClose">GOT IT, LET'S PLAY</button></div></div>
 <div id="lobby" class="modal"><div class="mbox"><h2>DIWALI DUELS</h2><p>Free-for-all vs 3 bots in the arena &middot; first to 10 eliminations, or most kills in 3:00.</p>
  <div class="lst" id="lbList"></div><p style="font-size:12px;opacity:.8">Over-the-shoulder view. Move: W A S D &middot; Look: mouse (click to capture) or drag on a phone &middot; Fire: click / FIRE &middot; Aim: right-click / Q &middot; Switch: Z or 1-4 &middot; Win coins!</p>
  <button id="lbPlay">PLAY</button><button id="lbLoadout" class="alt">LOADOUT</button><button id="lbClose" class="alt">CLOSE</button></div></div>
@@ -213,9 +248,11 @@ Weapons (on foot, buy at the shop): <kbd>Z</kbd> switch &nbsp; <kbd>L</kbd> load
   <div class="tb nm" data-k="Digit1">&#128663;</div><div class="tb nm" data-k="Digit2">&#128667;</div><div class="tb nm" data-k="Digit3">&#128757;</div><div class="tb nm" data-k="Digit4">&#127949;</div><div class="tb nm" data-k="Digit5">&#9992;&#65039;</div>
   <div class="tb nm" data-k="KeyF">&#127878;<small>ROCKETS</small></div>
   <div class="tb nm" data-k="KeyG">&#128165;<small>PATAKA</small></div>
-  <div class="tb nm f" data-k="KeyC">&#127881;<small>CHEER</small></div>
+  <div class="tb f" data-k="KeyC">&#127939;<small>SLIDE</small></div>
+  <div class="tb nm f" data-k="KeyB">&#127881;<small>CHEER</small></div>
   <div class="tb nm" data-k="KeyV">&#127909;<small>CAMERA</small></div>
   <div class="tb" data-k="KeyP">&#9876;&#65039;<small>MATCH</small></div>
+  <div class="tb" data-gd="1">?<small>HELP</small></div>
   <div class="tb" data-k="KeyM">&#128266;<small>MUTE</small></div>
   <div class="tb nm" data-k="Backquote">&#9881;&#65039;<small>ADMIN</small></div>
   <div class="tb" data-fs="1">&#9974;<small>FULL</small></div>
@@ -256,7 +293,7 @@ Weapons (on foot, buy at the shop): <kbd>Z</kbd> switch &nbsp; <kbd>L</kbd> load
 </div>
 <div id="talk"><div class="who">SHOPKEEPER</div><div id="talktxt">Namaste! Why are you here?</div><div class="opts"><button id="optBuy">1. Buy patakas</button><button id="optBye" class="bye">2. Bye</button></div></div>
 <div id="shop"><div id="shopbox"><h2>Diwali Shop</h2><div style="color:#bda9e6;margin:0 0 4px">Shopkeeper: "Take a look! Fresh patakas and more."</div><div>Coins: <b id="shopcoins">0</b></div><div id="shoplist"></div><button class="close" id="shopclose">Bye</button></div></div>
-<div id="start"><h1>Diwali City Simulator</h1><p>Drive, fly, collect coins and light up the night sky.</p><p>Turn your sound on for the full firework + crash audio.</p><div class="btn">Tap, click or press any key to start</div></div>
+<div id="start"><h1>Diwali City Simulator</h1><p>Drive, fly, collect coins and light up the night sky.</p><p>Turn your sound on for the full firework + crash audio.</p><div class="btn">Tap, click or press any key to start</div><p class="rotmsg">&#128241; Turn your phone sideways (landscape) for the best view.</p></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -1055,6 +1092,8 @@ window.addEventListener('keydown',onKeyDown=function(e){
     else if(e.code==='Digit2'||e.code==='Numpad2')closeShop(true);
     return;
   }
+  if(GD.open){if(e.code==='Escape'||e.code==='Enter'||e.code==='Slash')closeGuide();return;}
+  if(e.code==='Slash'){openGuide();return;}
   if(shopOpen)return;
   if(e.code==='KeyP'){matchKey();return;}
   if(LB.open||(MATCH.on&&MATCH.state==='over')){if(LB.open){if(e.code==='Enter')startMatch();else if(e.code==='Escape')closeLobby();}return;}
@@ -1062,11 +1101,12 @@ window.addEventListener('keydown',onKeyDown=function(e){
     const dm=/^Digit([1-4])$/.exec(e.code);
     if(dm){if(WK.on){const l=ownedList(),w=l[+dm[1]-1];if(w){WP.cur=w;attachModel();sfxEmpty();}}else{pickVehicle(ORDER[+dm[1]-1]);P.hp=100;HPS[P.type]=100;refreshDamage();}return;} // on foot: weapon slots; driving: switch vehicle
     if(e.code==='KeyE'){toggleLoadout(true);return;}
-    if(['KeyF','KeyG','KeyC','KeyV','Digit5'].indexOf(e.code)>=0)return;
+    if(['KeyF','KeyG','KeyV','Digit5'].indexOf(e.code)>=0)return;
   }
   if(e.code==='KeyR'&&MOON.on){returnToEarth();return;}
   if(e.code==='KeyX'){toggleOnFoot();return;}
-  if(e.code==='KeyC'&&WK.on){WK.cheerT=2.5;return;}
+  if(e.code==='KeyC'&&WK.on){startSlide();return;}
+  if(e.code==='KeyB'&&WK.on){WK.cheerT=2.5;return;}
   if(e.code==='KeyZ'){cycleWeapon();return;}
   if(e.code==='KeyL'){toggleLoadout();return;}
   if(e.code==='Escape'&&LO.open){toggleLoadout(false);return;}
@@ -1080,7 +1120,10 @@ window.addEventListener('keydown',onKeyDown=function(e){
 });
 window.addEventListener('keyup',onKeyUp=function(e){keys[e.code]=false;});
 window.addEventListener('blur',function(){for(const k in keys)keys[k]=false;});
-function startGame(){started=true;$('start').style.display='none';initAudio();toast('A Diwali Shop is right beside you. Press E to talk to the shopkeeper.',4500);}
+function startGame(){started=true;$('start').style.display='none';initAudio();
+  try{if(TOUCH_ON&&!localStorage.getItem('dcs_guide_seen'))setTimeout(openGuide,500);}catch(e){}
+  if(TOUCH_ON){try{const el=document.documentElement,f=el.requestFullscreen||el.webkitRequestFullscreen;if(f){const r=f.call(el);if(r&&r.catch)r.catch(function(){});}}catch(e){}try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('landscape').catch(function(){});}catch(e){}} // phones: fullscreen + landscape when allowed
+  toast('A Diwali Shop is right beside you. Press E to talk to the shopkeeper.',4500);}
 $('start').addEventListener('click',startGame);
 window.addEventListener('resize',function(){camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight);pMat.uniforms.uScale.value=window.innerHeight*0.5*PR;});
 
@@ -1306,7 +1349,7 @@ function collidePlayer(){
 }
 
 /* ================= ON FOOT, DAMAGE & CROWD ================= */
-const WK={on:false,x:0,y:0,z:0,h:0,sp:0,ph:0,mesh:null,hum:null,up:0,cheerT:0,jy:0,vy:0,dashT:0,dashDir:0};
+const WK={on:false,x:0,y:0,z:0,h:0,sp:0,ph:0,mesh:null,hum:null,up:0,cheerT:0,jy:0,vy:0,dashT:0,dashDir:0,slideT:0,slideDir:0,slideSp:0,slideCd:0,slAmt:0};
 const crowd=[];
 let toastUntil=0;
 function actor(){return WK.on?WK:P;}
@@ -1362,7 +1405,7 @@ function updateWalker(dt){
   WK.h+=turn*2.8*dt;
   const target=(fwd>0?(run?9:5):(fwd<0?-2.5:0))*ADM.speed*(WP.aim?0.45:1); // aiming slows you down
   WK.sp+=(target-WK.sp)*Math.min(1,dt*8);
-  const r=0.5,dsh=WK.dashT>0,hdg=dsh?WK.dashDir:WK.h,wsp=dsh?64:WK.sp,sv=(MATCH.on&&!dsh)?stf*4.6*(WP.aim?0.5:1):0,wdx=Math.sin(hdg)*wsp*dt-Math.cos(WK.h)*sv*dt,wdz=Math.cos(hdg)*wsp*dt+Math.sin(WK.h)*sv*dt,wl=Math.hypot(wdx,wdz),wn=wl>1.2?clamp(Math.ceil(wl/0.8),1,200):1;
+  const r=0.5,dsh=WK.dashT>0,sl=WK.slideT>0&&!dsh,hdg=dsh?WK.dashDir:(sl?WK.slideDir:WK.h),wsp=dsh?64:(sl?WK.slideSp*(0.25+0.75*WK.slideT/SLIDE_T):WK.sp),sv=(MATCH.on&&!dsh&&!sl)?stf*4.6*(WP.aim?0.5:1):0,wdx=Math.sin(hdg)*wsp*dt-Math.cos(WK.h)*sv*dt,wdz=Math.cos(hdg)*wsp*dt+Math.sin(WK.h)*sv*dt,wl=Math.hypot(wdx,wdz),wn=wl>1.2?clamp(Math.ceil(wl/0.8),1,200):1;
   function pushCircle(ox,oz,rr){const dx=WK.x-ox,dz=WK.z-oz,d=Math.hypot(dx,dz);if(d>=rr)return null;const nx=d>1e-4?dx/d:1,nz=d>1e-4?dz/d:0;WK.x+=nx*(rr-d);WK.z+=nz*(rr-d);return[nx,nz];}
   for(let s=0;s<wn;s++){ // sub-steps keep a very fast (admin) walker from slipping through walls
     if(MOON.on){
@@ -1392,12 +1435,19 @@ function updateWalker(dt){
     WK.vy-=2.2*dt;WK.jy=Math.max(0,WK.jy+WK.vy*dt);if(WK.jy===0&&WK.vy<0)WK.vy=0;
   }else{WK.jy=0;WK.vy=0;}
   WK.y=GY()+WK.jy;if(WK.dashT>0)WK.dashT-=dt;
+  if(WK.slideT>0){ // sliding: the direction follows your aim a little, dust kicks up behind you
+    WK.slideT-=dt;WK.slideDir+=angDiff(WK.slideDir,WK.h)*Math.min(1,dt*1.5);
+    const fx=Math.sin(WK.slideDir),fz=Math.cos(WK.slideDir);
+    if(Math.random()<dt*40)spawnP(WK.x-fx*0.6+rnd(-0.3,0.3),WK.y+0.15,WK.z-fz*0.6+rnd(-0.3,0.3),-fx*rnd(0,2)+rnd(-1,1),rnd(0.3,1.4),-fz*rnd(0,2)+rnd(-1,1),0.75,0.7,0.62,0.6,1.5,0.5,0,1.8);
+    if(WK.slideT<=0)WK.slideCd=0.6;
+  }else WK.slideCd=Math.max(0,WK.slideCd-dt);
+  WK.slAmt+=((WK.slideT>0?1:0)-WK.slAmt)*Math.min(1,dt*14);
   WK.ph+=dt*Math.min(Math.abs(WK.sp),14)*1.8;
   WK.cheerT-=dt;WK.up+=((WK.cheerT>0?1:0)-WK.up)*Math.min(1,dt*9);
   const sw=Math.sin(WK.ph)*0.7*Math.min(1,Math.abs(WK.sp)/3);
   poseHuman(WK.hum,sw,WK.up);
   if(WK.up>0.05){WK.hum.a1.rotation.x=Math.sin(T*9)*0.25*WK.up;WK.hum.a2.rotation.x=-Math.sin(T*9)*0.25*WK.up;}
-  WK.mesh.position.set(WK.x,WK.y+0.3+Math.abs(Math.sin(T*8))*0.1*WK.up,WK.z);WK.mesh.rotation.y=WK.h;
+  WK.mesh.rotation.order='YXZ';WK.mesh.position.set(WK.x,WK.y+0.3-0.12*WK.slAmt+Math.abs(Math.sin(T*8))*0.1*WK.up,WK.z);WK.mesh.rotation.y=WK.h;WK.mesh.rotation.x=-1.05*WK.slAmt;
 }
 // --- damage ---
 function damageVehicle(s){
@@ -1716,6 +1766,19 @@ function scytheHit(){
   for(let i=-6;i<=6;i++){const a=WK.h+i*0.16;spawnP(WK.x+Math.sin(a)*2.4,WK.y+1.2,WK.z+Math.cos(a)*2.4,0,0,0,0.7,0.8,1,0.18,1,0,0,2.4);}
   if(n)shake=Math.max(shake,0.08);
   return n;
+}
+const GD={open:false};
+function openGuide(){GD.open=true;$('guide').style.display='flex';for(const k in keys)keys[k]=false;}
+function closeGuide(){GD.open=false;$('guide').style.display='none';try{localStorage.setItem('dcs_guide_seen','1');}catch(e){}}
+$('gdClose').addEventListener('click',closeGuide);
+const SLIDE_T=0.95;
+function startSlide(){ // C: slide like in Rivals, a fast low glide that keeps your momentum
+  if(!WK.on||!started||shopOpen||matchFrozen()||WK.slideT>0||WK.slideCd>0||WK.dashT>0||WK.jy>0.05)return;
+  WK.slideT=SLIDE_T;WK.slideDir=WK.h;WK.slideSp=Math.max(11,Math.abs(WK.sp)+5)*Math.min(ADM.speed,3);
+  sfxSlide();shake=Math.max(shake,0.06);
+}
+function sfxSlide(){
+  if(!AC)return;const t=AC.currentTime,n=noiseSrc(t,0.7),bp=filt('bandpass',900,0.7),g=envGain(t,0.22,0.03,0.6,master);n.connect(bp);bp.connect(g);
 }
 function startDash(){
   if(!WK.on||WP.cur!=='scythe'||WK.dashT>0||WP.dashCd>0)return;
@@ -2156,7 +2219,7 @@ function updateBots(dt){
     b.cd-=dt;
     if(alive&&los&&d<42&&b.seeT>0.45&&Math.abs(angDiff(b.h,Math.atan2(dx,dz)))<0.3&&b.cd<=0){
       b.cd=rnd(0.3,0.55);
-      const mv=Math.min(1,Math.abs(aspd)/5),acc=clamp(0.34-d*0.0055,0.08,0.34)*(1-mv*0.28)*0.85;
+      const mv=Math.min(1,Math.abs(aspd)/5),acc=clamp(0.34-d*0.0055,0.08,0.34)*(1-mv*0.28)*0.85*((WK.on&&WK.slideT>0)?0.5:1);
       const hit=Math.random()<acc,mx=b.x+Math.sin(b.h)*0.8,mz=b.z+Math.cos(b.h)*0.8;
       if(hit){tracer(mx,1.35,mz,A.x,1.35,A.z);hurtPlayer(5.5,b);}
       else{const a=rnd(-0.12,0.12),mm=d+rnd(-4,8);tracer(mx,1.35,mz,b.x+Math.sin(b.h+a)*mm,rnd(0.6,2),b.z+Math.cos(b.h+a)*mm);}
@@ -2191,9 +2254,9 @@ function updateCameraFP(dt){ // over-the-shoulder camera like Rivals; the sniper
   const cp=Math.cos(MATCH.pitch),spn=Math.sin(MATCH.pitch);
   const dx=sx*cp,dy=spn,dz=sz*cp;
   let cam={x:0,z:0},cy;
-  if(scoped){cam.x=WK.x;cam.z=WK.z;cy=WK.y+1.62;}
+  if(scoped){cam.x=WK.x;cam.z=WK.z;cy=WK.y+1.62-0.8*WK.slAmt;}
   else{
-    const dist=dead?6.5:(WP.aim?2.4:3.7),sh=dead?0:matchShoulder(),py=WK.y+(dead?1.2:1.65);
+    const dist=dead?6.5:(WP.aim?2.4:3.7),sh=dead?0:matchShoulder(),py=WK.y+(dead?1.2:1.65)-0.7*WK.slAmt;
     cam.x=WK.x-dx*dist+rx*sh;cam.z=WK.z-dz*dist+rz*sh;cy=py-dy*dist+(dead?2.5:0.35);
     pushBoxes(cam,0.35);
   }
@@ -2584,7 +2647,7 @@ function joyMove(e){
   let dx=(e.clientX-(r.left+R))/R,dy=(e.clientY-(r.top+R))/R;const l=Math.hypot(dx,dy);if(l>1){dx/=l;dy/=l;}
   setJoy(dx,dy);
 }
-function btnOf(t){while(t&&t.dataset&&t.dataset.k===undefined&&t.dataset.fs===undefined)t=t.parentNode;return(t&&t.dataset&&(t.dataset.k!==undefined||t.dataset.fs!==undefined))?t:null;}
+function btnOf(t){while(t&&t.dataset&&t.dataset.k===undefined&&t.dataset.fs===undefined&&t.dataset.gd===undefined)t=t.parentNode;return(t&&t.dataset&&(t.dataset.k!==undefined||t.dataset.fs!==undefined||t.dataset.gd!==undefined))?t:null;}
 function enableTouch(){
   if(TOUCH_ON)return;TOUCH_ON=true;document.body.className='touch';
   const root=$('touch');
@@ -2594,6 +2657,7 @@ function enableTouch(){
   window.addEventListener('pointerup',endJ);window.addEventListener('pointercancel',endJ);
   root.addEventListener('pointerdown',function(e){
     const b=btnOf(e.target);if(!b)return;e.preventDefault();
+    if(b.dataset.gd!==undefined){openGuide();return;}
     if(b.dataset.fs!==undefined){try{const el=document.documentElement;(el.requestFullscreen||el.webkitRequestFullscreen).call(el);}catch(x){}return;}
     TB.set(e.pointerId,b.dataset.k);b.className+=' on';fireKey(b.dataset.k,true);
   });
@@ -2607,7 +2671,7 @@ function enableTouch(){
 let touchKey='';
 function touchUI(force){
   if(!TOUCH_ON)return;
-  const hide=!started||shopOpen||talkOpen||LO.open||kicked||LB.open||(MATCH.on&&MATCH.state==='over');
+  const hide=!started||shopOpen||talkOpen||LO.open||kicked||LB.open||GD.open||(MATCH.on&&MATCH.state==='over');
   const k=[hide,WK.on,MOON.on,MATCH.on,!MOON.on&&started&&nearShop()].join();
   if(k===touchKey&&!force)return;touchKey=k;
   $('touch').className=(hide?'hide':'')+(MATCH.on?' match':'')+(WK.on?' foot':'')+(MOON.on?' moon':'')+((!MOON.on&&started&&nearShop())?' shop':'');
@@ -2658,7 +2722,7 @@ function frame(ts){
   renderer.render(scene,camera);
 }
 requestAnimationFrame(frame);
-window.__dcs={match:{MATCH:MATCH,ARENA:ARENA,start:startMatch,leave:leaveMatch,open:openLobby,hurt:hurtPlayer,end:endMatch,lobby:LB,matchKill:matchKill,projs:projs,autoSlot:autoSlot},touch:{enable:enableTouch,setJoy:setJoy,fireKey:fireKey,TJ:TJ,on:function(){return TOUCH_ON;}},weap:{LO:LO,setSlot:setSlot,toggleLoadout:toggleLoadout,ownedList:ownedList,WP:WP,WDEF:WDEF,owns:owns,cycle:cycleWeapon,tryFire:tryFire,hurt:hurtPerson,startDash:startDash,nades:nades,explode:explodeNade,throwGrenade:throwGrenade,scytheHit:scytheHit,swing:swingScythe},moon:{MOON:MOON,SPACE:SPACE,start:startMoonTrip,back:returnToEarth},ADM:ADM,admin:{massRemove:massRemove,removeDesc:removeDesc,undo:undoLast,onMsg:onAdminMsg,unlock:unlockAdmin,lock:lockAdmin,toggle:toggleAdmin,teleport:teleport,giveSelf:giveSelf,undoCount:function(){return undoStack.length;},others:others,myId:myId},trees:trees,statics:statics,people:people,keepers:keepers,talk:{list:showList,bye:function(){closeShop(true);},open:function(){return talkOpen;}},shopPts:shopPts,SHOP:SHOP,WK:WK,crowd:crowd,HPS:HPS,toggleOnFoot:toggleOnFoot,P:P,rockets:rockets,ais:ais,buildings:buildings,obstacles:obstacles,coins:coins,explode:explode,launchRocket:launchRocket,registerImpact:registerImpact,save:save};
+window.__dcs={slide:{start:startSlide,SLIDE_T:SLIDE_T},match:{MATCH:MATCH,ARENA:ARENA,start:startMatch,leave:leaveMatch,open:openLobby,hurt:hurtPlayer,end:endMatch,lobby:LB,matchKill:matchKill,projs:projs,autoSlot:autoSlot},touch:{enable:enableTouch,setJoy:setJoy,fireKey:fireKey,TJ:TJ,on:function(){return TOUCH_ON;}},weap:{LO:LO,setSlot:setSlot,toggleLoadout:toggleLoadout,ownedList:ownedList,WP:WP,WDEF:WDEF,owns:owns,cycle:cycleWeapon,tryFire:tryFire,hurt:hurtPerson,startDash:startDash,nades:nades,explode:explodeNade,throwGrenade:throwGrenade,scytheHit:scytheHit,swing:swingScythe},moon:{MOON:MOON,SPACE:SPACE,start:startMoonTrip,back:returnToEarth},ADM:ADM,admin:{massRemove:massRemove,removeDesc:removeDesc,undo:undoLast,onMsg:onAdminMsg,unlock:unlockAdmin,lock:lockAdmin,toggle:toggleAdmin,teleport:teleport,giveSelf:giveSelf,undoCount:function(){return undoStack.length;},others:others,myId:myId},trees:trees,statics:statics,people:people,keepers:keepers,talk:{list:showList,bye:function(){closeShop(true);},open:function(){return talkOpen;}},shopPts:shopPts,SHOP:SHOP,WK:WK,crowd:crowd,HPS:HPS,toggleOnFoot:toggleOnFoot,P:P,rockets:rockets,ais:ais,buildings:buildings,obstacles:obstacles,coins:coins,explode:explode,launchRocket:launchRocket,registerImpact:registerImpact,save:save};
 })();
 </script>
 </body>
